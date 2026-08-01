@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator by Audrey</title>
+    <link rel="stylesheet" href="calculator.css"/>
+
+</head>
+<body>
+
+    <script>
+        // penjumlahan
+        function calculatePlus() {
+            var myBox1 = Number(document.getElementById('box1-plus').value);
+            var myBox2 = Number(document.getElementById('box2-plus').value);
+            var resultPlus = document.getElementById('result-plus');
+            var myResult = myBox1 + myBox2; resultPlus.value = myResult;
+        }
+
+        // pengurangan
+        function calculateMinus() {
+            var myBox1 = Number(document.getElementById('box1-minus').value);
+            var myBox2 = Number(document.getElementById('box2-minus').value);
+            var resultMinus = document.getElementById('result-minus');
+            var myResult = myBox1 - myBox2; resultMinus.value = myResult;
+        }
+
+        // pembagian
+        function calculateDiv() {
+            var myBox1 = Number(document.getElementById('box1-div').value);
+            var myBox2 = Number(document.getElementById('box2-div').value);
+            var resultDiv = document.getElementById('result-div');
+            var myResult = myBox1 / myBox2; resultDiv.value = myResult;
+        }
+
+        // pembagian
+        function calculateTimes() {
+            var myBox1 = Number(document.getElementById('box1-times').value);
+            var myBox2 = Number(document.getElementById('box2-times').value);
+            var resultTimes = document.getElementById('result-times');
+            var myResult = myBox1 * myBox2; resultTimes.value = myResult;
+        }
+    </script>
+    
+    <!-- navbar -->
+    <nav class="navbar" id="navbar">
+        <ul>
+            <li>Audrey Janeeta Fahrani Supriady</li>
+            <li>CALCULATOR PROJECT</li>
+            <li><a href="index.html">Version 1</a></li>
+            <li><a href="version 2.html">Version 2</a></li>
+        </ul>
+    </nav>
+
+    <!-- menu -->
+
+    <div class="menu">
+
+        <!-- plus -->
+        <button onclick="document.getElementById('plus').style.display = 'block' 
+        document.getElementById('minus').style.display = 'none'
+        document.getElementById('div').style.display = 'none'
+        document.getElementById('times').style.display = 'none'">+
+        </button>
+        <!-- minus -->
+        <button onclick="document.getElementById('minus').style.display = 'block' 
+        document.getElementById('plus').style.display = 'none'
+        document.getElementById('div').style.display = 'none'
+        document.getElementById('times').style.display = 'none'">-
+        </button>
+        <!-- divide -->
+         <button onclick="document.getElementById('div').style.display = 'block' 
+        document.getElementById('plus').style.display = 'none'
+        document.getElementById('minus').style.display = 'none'
+        document.getElementById('times').style.display = 'none'">÷
+        </button>
+        <!-- times -->
+         <button onclick="document.getElementById('times').style.display = 'block' 
+        document.getElementById('plus').style.display = 'none'
+        document.getElementById('minus').style.display = 'none'
+        document.getElementById('div').style.display = 'none'">×
+        </button>
+
+    </div>
+
+    <!-- penjumlahan -->
+    <section class="plus" id="plus">
+
+        <table>
+            <tr>
+                <th>Box 1</th>
+                <th></th>
+                <th>Box 2</th>
+                <th></th>
+                <th>Result</th>
+            </tr>
+            <tr>
+                <td><input id="box1-plus" type="text" oninput="calculatePlus()"></td>
+                <td>+</td>
+                <td><input id="box2-plus" type="text" oninput="calculatePlus()"></td>
+                <td>=</td>
+                <td><input id="result-plus"></td>
+            </tr>
+        </table>
+
+    </section>
+
+    <!-- pengurangan -->
+    <section class="minus" id="minus" style="display: none;">
+
+        <table>
+            <tr>
+                <th>Box 1</th>
+                <th></th>
+                <th>Box 2</th>
+                <th></th>
+                <th>Result</th>
+            </tr>
+            <tr>
+                <td><input id="box1-minus" type="text" oninput="calculateMinus()"></td>
+                <td>-</td>
+                <td><input id="box2-minus" type="text" oninput="calculateMinus()"></td>
+                <td>=</td>
+                <td><input id="result-minus"></td>
+            </tr>
+        </table>
+
+    </section>
+
+    <!-- pembagian -->
+     <section class="div" id="div" style="display: none;">
+
+        <table>
+            <tr>
+                <th>Box 1</th>
+                <th></th>
+                <th>Box 2</th>
+                <th></th>
+                <th>Result</th>
+            </tr>
+            <tr>
+                <td><input id="box1-div" type="text" oninput="calculateDiv()"></td>
+                <td>÷</td>
+                <td><input id="box2-div" type="text" oninput="calculateDiv()"></td>
+                <td>=</td>
+                <td><input id="result-div"></td>
+            </tr>
+        </table>
+
+    </section>
+
+    <!-- perkalian -->
+     <section class="times" id="times" style="display: none;">
+
+        <table>
+            <tr>
+                <th>Box 1</th>
+                <th></th>
+                <th>Box 2</th>
+                <th></th>
+                <th>Result</th>
+            </tr>
+            <tr>
+                <td><input id="box1-times" type="text" oninput="calculateTimes()"></td>
+                <td>×</td>
+                <td><input id="box2-times" type="text" oninput="calculateTimes()"></td>
+                <td>=</td>
+                <td><input id="result-times"></td>
+            </tr>
+        </table>
+
+    </section>
+
+</body>
+</html>
