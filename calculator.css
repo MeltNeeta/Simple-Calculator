@@ -86,6 +86,7 @@ h2 {
     background-color: var(--lightgreen);
     border-color: var(--darkgreen);
     font-size: 30px;
+    border-radius: 10px;
 }
 
 .menu button:hover{
@@ -95,3 +96,111 @@ h2 {
     background-color: var(--black);
 }
 
+.hitung {
+    padding-top: 75px;
+    justify-self: center;
+}
+
+/* plus */
+.plus th {
+    font-family: "Amatic SC", sans-serif;
+    font-size: 30px;
+    font-weight: bolder;
+    color: var(--darkgreen);
+}
+.plus td{
+    padding: 4px;
+}
+.plus td p{
+    font-size: 30px;
+    font-weight: 400;
+    padding-top: 0px;
+    font-family: "Black Ops One", system-ui;
+}
+.plus td input{
+    height: 40px;
+    font-size: 20px;
+    color: var(--white);
+    background-color: var(--black);
+    border-radius: 10px;
+    padding: 4px;
+    font-family: "Black Ops One", system-ui;
+}
+
+/* minus */
+.minus th {
+    font-family: "Amatic SC", sans-serif;
+    font-size: 30px;
+    font-weight: bolder;
+    color: var(--darkgreen);
+}
+.minus td{
+    padding: 4px;
+}
+.minus td p{
+    font-size: 30px;
+    font-weight: 400;
+    padding-top: 0px;
+    font-family: "Black Ops One", system-ui;
+}
+.minus td input{
+    height: 40px;
+    font-size: 20px;
+    color: var(--white);
+    background-color: var(--black);
+    border-radius: 10px;
+    padding: 4px;
+    font-family: "Black Ops One", system-ui;
+}
+
+/* div */
+.div th {
+    font-family: "Amatic SC", sans-serif;
+    font-size: 30px;
+    font-weight: bolder;
+    color: var(--darkgreen);
+}
+.div td{
+    padding: 4px;
+}
+.div td p{
+    font-size: 30px;
+    font-weight: 400;
+    padding-top: 0px;
+    font-family: "Black Ops One", system-ui;
+}
+.div td input{
+    height: 40px;
+    font-size: 20px;
+    color: var(--white);
+    background-color: var(--black);
+    border-radius: 10px;
+    padding: 4px;
+    font-family: "Black Ops One", system-ui;
+}
+
+/* times */
+.times th {
+    font-family: "Amatic SC", sans-serif;
+    font-size: 30px;
+    font-weight: bolder;
+    color: var(--darkgreen);
+}
+.times td{
+    padding: 4px;
+}
+.times td p{
+    font-size: 30px;
+    font-weight: 400;
+    padding-top: 0px;
+    font-family: "Black Ops One", system-ui;
+}
+.times td input{
+    height: 40px;
+    font-size: 20px;
+    color: var(--white);
+    background-color: var(--black);
+    border-radius: 10px;
+    padding: 4px;
+    font-family: "Black Ops One", system-ui;
+}
