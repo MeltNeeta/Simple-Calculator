@@ -4,39 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator by Audrey</title>
-    <link rel="stylesheet" href="calculator.css"/>
+    <link rel="stylesheet" href="version 2.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Akt:wght@100..900&family=Amatic+SC:wght@400;700&family=Arimo:ital,wght@0,400..700;1,400..700&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Black+Ops+One&family=Jersey+10+Charted&family=League+Gothic:wdth@75..100&family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
 </head>
 <body>
-
-<script>
-
-const display = document.getElementById('display');
-
-// Menambahkan angka/operator ke layar
-function appendValue(input) {
-    display.value += input;
-}
-
-// Menghapus seluruh tampilan (tombol AC)
-function clearDisplay() {
-    display.value = '';
-}
-
-// Menghitung hasil matematika
-function calculateResult() {
-    try {
-        // eval() digunakan untuk mengevaluasi ekspresi matematika sederhana
-        display.value = eval(display.value);
-    } catch (error) {
-        display.value = 'Error';
-    }
-}
-
-</script>
     
     <!-- navbar -->
     <nav class="navbar" id="navbar">
@@ -48,33 +22,76 @@ function calculateResult() {
         </ul>
     </nav>
 
+
+
+    <div class="main">
     <div class="calculator">
-        <input type="text" class="calculator-screen" id="display" disabled />
-
-        <div class="calculator-keys">
-            <button onclick="clearDisplay()" class="all-clear">AC</button>
-            <button onclick="appendValue('/')" class="operator">&divide;</button>
-            <button onclick="appendValue('*')" class="operator">&times;</button>
-            <button onclick="appendValue('-')" class="operator">-</button>
-
-            <button onclick="appendValue('7')">7</button>
-            <button onclick="appendValue('8')">8</button>
-            <button onclick="appendValue('9')">9</button>
-            <button onclick="appendValue('+')" class="operator">+</button>
-
-            <button onclick="appendValue('4')">4</button>
-            <button onclick="appendValue('5')">5</button>
-            <button onclick="appendValue('6')">6</button>
-            <button onclick="calculateResult()" class="equal-sign grid-span-2">=</button>
-
-            <button onclick="appendValue('1')">1</button>
-            <button onclick="appendValue('2')">2</button>
-            <button onclick="appendValue('3')">3</button>
-
-            <button onclick="appendValue('0')" class="zero-btn">0</button>
-            <button onclick="appendValue('.')">.</button>
+        <div class="display" id="display">0</div>
+        
+        <div class="buttons">
+            <button class="btn-light" onclick="clearDisplay()">C</button>
+            <button class="btn-dark" onclick="appendCharacter('(')">(</button>
+            <button class="btn-light" onclick="appendCharacter(')')">)</button>
+            <button class="btn-dark" onclick="appendCharacter('/')">÷</button>
+            
+            <button class="btn-dark" onclick="appendCharacter('7')">7</button>
+            <button class="btn-light" onclick="appendCharacter('8')">8</button>
+            <button class="btn-dark" onclick="appendCharacter('9')">9</button>
+            <button class="btn-light" onclick="appendCharacter('×')">×</button>
+            
+            <button class="btn-light" onclick="appendCharacter('4')">4</button>
+            <button class="btn-dark" onclick="appendCharacter('5')">5</button>
+            <button class="btn-light" onclick="appendCharacter('6')">6</button>
+            <button class="btn-dark" onclick="appendCharacter('-')">-</button>
+            
+            <button class="btn-dark" onclick="appendCharacter('1')">1</button>
+            <button class="btn-light" onclick="appendCharacter('2')">2</button>
+            <button class="btn-dark" onclick="appendCharacter('3')">3</button>
+            <button class="btn-light" onclick="appendCharacter('+')">+</button>
+            
+            <button class="btn-light" onclick="appendCharacter('0')">0</button>
+            <button class="btn-dark" onclick="appendCharacter('.')">.</button>
+            <button class="btn-light" onclick="deleteLast()">⌫</button>
+            <button class="btn-dark" onclick="calculateResult()">=</button>
         </div>
     </div>
+
+    </div>
+
+
+    <script>
+        const display = document.getElementById('display');
+
+        function appendCharacter(val) {
+            if (display.innerText === '0' || display.innerText === 'Error') {
+                display.innerText = val;
+            } else {
+                display.innerText += val;
+            }
+        }
+
+        function clearDisplay() {
+            display.innerText = '0';
+        }
+
+        function deleteLast() {
+            if (display.innerText.length === 1 || display.innerText === 'Error') {
+                display.innerText = '0';
+            } else {
+                display.innerText = display.innerText.slice(0, -1);
+            }
+        }
+
+        function calculateResult() {
+            try {
+                // Mengubah simbol visual menjadi operator JS yang valid
+                let expression = display.innerText.replace(/÷/g, '/').replace(/×/g, '*');
+                display.innerText = eval(expression);
+            } catch (e) {
+                display.innerText = 'Error';
+            }
+        }
+    </script>
 
 </body>
 </html>
